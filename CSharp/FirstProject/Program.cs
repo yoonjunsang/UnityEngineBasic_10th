@@ -81,7 +81,7 @@
             }
             else
             {
-                나이 = 예상나이;
+                this.나이 = 예상나이;
                 return true;
             }
         }
