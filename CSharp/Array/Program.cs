@@ -64,6 +64,10 @@
             for (int i = 0; i < arr.Length; i++)
             {
                 Console.WriteLine(arr[i]);
+                //break; //현재 구문을 탈출
+                //continue; //현재 라인에서 코드흐름 끊고 다시 현재 구문 처음으로 돌아가서 실행
+                //return; //현재 할당된 함수를 종료하고 메모리 해제
+                Console.WriteLine(arr[i]);
             }
             int[] arr2 = new int[8];
             System.Array.Copy(arr, arr2, arr.Length);
@@ -114,9 +118,70 @@
             }
         }
 
-        static void MoveUp() { }
-        static void MoveDown() { }
-        static void MoveLeft() { }
+        static void MoveUp()
+        {
+            // 맵 범위 초과하는지 확인
+            if (y <= 0)
+            {
+                Console.WriteLine("해당 방향으로 움직일 수 없습니다. 맵의 경계를 초과합니다.");
+                return;
+            }
+
+            // 막혀있는지 확인
+            if (map[y - 1, x] == 1)
+            {
+                Console.WriteLine("벽으로 막혀있다.");
+                return;
+            }
+
+            map[y, x] = 0;
+            y--;
+            map[y, x] = 3;
+            DrawMap();
+        }
+        static void MoveDown() 
+        {
+            // 맵 범위 초과하는지 확인
+            if (y >= map.GetLength(0) - 1)
+            {
+                Console.WriteLine("해당 방향으로 움직일 수 없습니다. 맵의 경계를 초과합니다.");
+                return;
+            }
+
+            // 막혀있는지 확인
+            if (map[y + 1, x] == 1)
+            {
+                Console.WriteLine("벽으로 막혀있다.");
+                return;
+            }
+
+            map[y, x] = 0;
+            y++;
+            map[y, x] = 3;
+            DrawMap();
+        }
+        static void MoveLeft() 
+        {
+            // 맵 범위 초과하는지 확인
+            if (x <= 0)
+            {
+                Console.WriteLine("해당 방향으로 움직일 수 없습니다. 맵의 경계를 초과합니다.");
+                return;
+            }
+
+            // 막혀있는지 확인
+            if (map[y, x - 1] == 1)
+            {
+                Console.WriteLine("벽으로 막혀있다.");
+                return;
+            }
+
+            map[y, x] = 0;
+            x--;
+            map[y, x] = 3;
+            DrawMap();
+        }
+
         static void MoveRight()
         {
             // 맵 범위 초과하는지 확인
