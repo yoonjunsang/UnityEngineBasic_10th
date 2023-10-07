@@ -28,7 +28,7 @@
             // Boxing : 
             // object 타입 변수에 어떤 데이터를 대입하면 
             // heap 메모리영역에 object 타입 객체를 생성하고, 
-            // 데이터의 타입참조테이블인덱스와 데이터를 씀.
+            // TypeInfo 와 데이터를 씀.
             object int1 = 3;
             object str = "zㅣ존검사";
             object wizard = new Wizard();
@@ -36,7 +36,6 @@
             // Unboxing :
             // object 객체에서 원래 데이터를 읽어오는 과정
             int a = (int)int1;
-
         }
     }
 }
