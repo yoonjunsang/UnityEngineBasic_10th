@@ -22,7 +22,7 @@ public class PlayerStatusUI : MonoBehaviour
         //_player.onHpChanged += RefreshHPBar;
         // 인라인 함수 : 함수 오버헤드를 줄이기 위해 기능 구현부를 해당 라인에 직접 삽입하는 함수 
         // C# 에서의 인라인 함수 구현 : 익명함수 (람다식) 으로 구현함.
-        // 람다식 : 컴파일러가 판단할 수 있는 코드를 모두 생략하고 이름을 생략한 함수식
+        // 람다식 : 컴파일러가 판단할 수 있는 코드를 생략하고 이름을 생략한 함수식
 
         // ex ) RefreshHPBar
         // 1. 인라인함수는 접근제한자가 의미 없으므로 private 생략
