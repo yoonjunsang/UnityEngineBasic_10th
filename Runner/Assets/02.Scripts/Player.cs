@@ -31,4 +31,9 @@ public class Player : MonoBehaviour
     [SerializeField] private float _hpMax = 100;
     public delegate void OnHpChangedHandler(float value);
     public event OnHpChangedHandler onHpChanged;
+
+    public void DepleteHp(float amout)
+    {
+        hp -= amout;
+    }
 }
