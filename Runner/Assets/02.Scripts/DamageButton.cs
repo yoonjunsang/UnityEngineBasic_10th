@@ -7,7 +7,7 @@ public class DamageButton : MonoBehaviour
 {
     private Button _button;
     [SerializeField] private Player _player;
-
+     
     private void Start()
     {
         _button = GetComponent<Button>();
